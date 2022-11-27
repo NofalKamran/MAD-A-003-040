@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "510590608470",
+    "project_id": "prothenics-fyp",
+    "storage_bucket": "prothenics-fyp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510590608470:android:c382e90acf21130ff007f7",
+        "android_client_info": {
+          "package_name": "com.prothenics_nofal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510590608470-egurr9luodl000a062o9b41ou3i6c3a5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkWb125Mdu29V4WIXpqy7AgZ0XuzhvjpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510590608470-egurr9luodl000a062o9b41ou3i6c3a5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
