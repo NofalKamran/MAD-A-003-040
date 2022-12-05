@@ -18,15 +18,17 @@
    Text,
    useColorScheme,
    TouchableOpacity, Button,
-   View,
+   View, PermissionsAndroid
  } from 'react-native';
 
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
- 
+ import Geolocation from 'react-native-geolocation-service';
+
  // const Stack=createNativeStackNavigator();
+ 
+
  const Menu= ({navigation}) => {
-  
  
    return (
      //<NavigationContainer>
@@ -53,7 +55,7 @@
      </TouchableOpacity>
      <TouchableOpacity style={styles.equip1} onPress={()=>navigation.push('Gain')} > 
           
-         <ImageBackground imageStyle={{ borderRadius: 12}}  style={styles.reduceImage} source={require("C:/Users/Arsal/ProThenics_Nofal/weights2.jpg")}>  
+         <ImageBackground imageStyle={{ borderRadius: 12,opacity:0.9}}  style={styles.reduceImage} source={require("C:/Users/Arsal/ProThenics_Nofal/weights2.jpg")}>  
            
            <Text style={styles.subplanEquip}>Weight Gain </Text> 
             
@@ -62,7 +64,7 @@
      </TouchableOpacity>
      <TouchableOpacity style={styles.equip1} onPress={()=>navigation.push('Loss')} > 
           
-         <ImageBackground imageStyle={{ borderRadius: 12}}  style={styles.reduceImage} source={require("C:/Users/Arsal/ProThenics_Nofal/weightloss.jpg")}>  
+         <ImageBackground imageStyle={{ borderRadius: 12,opacity:0.85}}  style={styles.reduceImage} source={require("C:/Users/Arsal/ProThenics_Nofal/weightloss.jpg")}>  
            
            <Text style={styles.subplanEquip}>Weight Loss </Text> 
             
@@ -122,7 +124,7 @@
  flex:0.2, height:65, 
    },
    mainView:{
-     backgroundColor:"#363636", height:800,
+     backgroundColor:"white", height:800,
    },
     
    equip1:{
@@ -159,17 +161,17 @@
    },
    subplanEquip:{
     marginTop:40,  marginLeft:20,
-     fontSize:30,  color:"gold",     textAlign:"center", opacity:1,
+     fontSize:30,  color:"white",     textAlign:"center", opacity:1,
     fontWeight:"bold"
   },
   planEquip:{
-    marginLeft:10, marginTop:25, marginBottom:10,
-    fontSize:30,  color:"gold", opacity:1, fontFamily:'Lobster-Regular',
+    marginLeft:10, marginTop:15,
+    fontSize:30,  color:"black", opacity:1, fontFamily:'Lobster-Regular',
    fontWeight:"bold" , textAlign: 'left',
   },
    titleEquip:{
      marginTop:60, 
-     fontSize:30,  color:"gold",     textAlign:"center", opacity:1,
+     fontSize:30,  color:"white",     textAlign:"center", opacity:1,
     fontWeight:"bold", fontFamily:'Lobster-Regular',
    },
    titleEquip3:{

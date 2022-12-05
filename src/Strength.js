@@ -85,7 +85,7 @@
  
        <TouchableOpacity style={styles.equip1} onPress={()=>navigation.push('Strength')}> 
           
-       <ImageBackground  imageStyle={{ borderRadius: 12}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/triceps.jpg")}>  
+       <ImageBackground  imageStyle={{ borderRadius: 12, opacity:0.7}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/triceps.jpg")}>  
        <View style={{borderRadius:10, margin:7, backgroundColor:'purple', width:130}}>
            <Text style={{margin:5, fontWeight:'bold', color:'white'}}> Intermediate</Text>
             </View>
@@ -97,13 +97,13 @@
      </TouchableOpacity>
      <TouchableOpacity style={styles.equip1} onPress={()=>navigation.push('Gain')} > 
           
-     <ImageBackground  imageStyle={{ borderRadius: 12}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/benchD.jpg")}>  
+     <ImageBackground  imageStyle={{ borderRadius: 12,opacity:0.7}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/benchD.jpg")}>  
      <View style={{borderRadius:10, margin:7, backgroundColor:'green', width:100}}>
            <Text style={{margin:5, fontWeight:'bold', color:'white'}}> Beginner</Text>
             </View>
 
            <Text style={{marginTop:17,  marginLeft:20, 
-     fontSize:30,  color:"goldenrod",     textAlign:"center", opacity:1,
+     fontSize:30,  color:"white",     textAlign:"center", opacity:1,
     fontWeight:"bold"}}>Bench Dips </Text> 
  </ImageBackground>
         
@@ -111,7 +111,7 @@
      </TouchableOpacity>
      <TouchableOpacity style={styles.equip1} onPress={()=>navigation.push('Loss')} > 
           
-     <ImageBackground  imageStyle={{ borderRadius: 12}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/tricepextension.jpg")}>  
+     <ImageBackground  imageStyle={{ borderRadius: 12,opacity:0.7}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/tricepextension.jpg")}>  
      <View style={{borderRadius:10, margin:7, backgroundColor:'purple', width:130}}>
            <Text style={{margin:5, fontWeight:'bold', color:'white'}}> Intermediate</Text>
        </View>
@@ -136,7 +136,7 @@
            <Text style={{margin:5, fontWeight:'bold', color:'white'}}> Advanced</Text>
        </View>
            <Text style={{marginTop:17,  marginLeft:20, 
-     fontSize:30,  color:"gold",     textAlign:"center", opacity:1,
+     fontSize:30,  color:"white",     textAlign:"center", opacity:1,
     fontWeight:"bold"}}>Hefesto</Text> 
  
      </ImageBackground>
@@ -149,7 +149,7 @@
            <Text style={{margin:5, fontWeight:'bold', color:'white'}}> Intermediate</Text>
        </View>
            <Text style={{marginTop:17,  marginLeft:20, 
-     fontSize:30,  color:"gold",     textAlign:"center", opacity:1,
+     fontSize:30,  color:"white",     textAlign:"center", opacity:1,
     fontWeight:"bold"}}>Chin ups </Text> 
  </ImageBackground>
         
@@ -157,7 +157,7 @@
      </TouchableOpacity>
      <TouchableOpacity style={styles.equip1} onPress={()=>navigation.push('Loss')} > 
           
-     <ImageBackground  imageStyle={{ borderRadius: 12}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/bodyrow.jpg")}>  
+     <ImageBackground  imageStyle={{ borderRadius: 12,opacity:0.7}}  style={styles.reduceImage3} source={require("C:/Users/Arsal/ProThenics_Nofal/bodyrow.jpg")}>  
      <View style={{borderRadius:10, margin:7, backgroundColor:'purple', width:130}}>
            <Text style={{margin:5, fontWeight:'bold', color:'white'}}> Intermediate</Text>
        </View>
@@ -187,7 +187,7 @@
  flex:0.2, height:65, 
    },
    mainView:{
-     backgroundColor:"#363636", height:800,
+     backgroundColor:"white", height:800,
    },
     
    equip1:{
@@ -220,18 +220,19 @@
   },
    title:{
     //  marginLeft:10, paddingLeft:10, 
-     fontSize:25,  color:"black", flex:0.8, opacity:1
-
+     fontSize:25,  color:"black", flex:0.8, opacity:1,
+      marginTop:"-10%"
       
    },
    subplanEquip:{
-    marginTop:17,  marginLeft:20, 
-     fontSize:30,  color:"gold",     textAlign:"center", opacity:1,
+    // marginTop:17,  marginLeft:20, m
+marginTop:9,
+     fontSize:30,  color:"white",     textAlign:"center",
     fontWeight:"bold"
   },
   planEquip:{
-    marginLeft:10, marginTop:10, marginBottom:10,
-    fontSize:30,  color:"gold", opacity:1, textAlign:'left',
+    marginLeft:10, marginTop:7, marginBottom:10,
+    fontSize:30,  color:"black", opacity:1, textAlign:'left',
    fontWeight:"bold"
   },
    titleEquip:{

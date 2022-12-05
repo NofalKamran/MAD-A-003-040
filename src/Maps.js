@@ -6,7 +6,8 @@
  * @flow strict-local
  */
 
- import React from 'react';
+ import React, {useState, useEffect} from 'react';
+ 
  import type {Node} from 'react';
  import {
    SafeAreaView,
@@ -14,30 +15,81 @@
    ScrollView,
    StatusBar,
    StyleSheet,
-   Text,
+   Text, 
    useColorScheme,
    TouchableOpacity, Button,
-   View,
+   View,PermissionsAndroid
  } from 'react-native';
 
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
  import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps'
+ import Geolocation from 'react-native-geolocation-service';
  // const Stack=createNativeStackNavigator();
+ const requestLocationPermission = async () => {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: 'Geolocation Permission',
+        message: 'Can we access your location?',
+        buttonNeutral: 'Ask Me Later',
+        buttonNegative: 'Cancel',
+        buttonPositive: 'OK',
+      },
+    );
+    console.log('granted', granted);
+    if (granted === 'granted') {
+      console.log('You can use Geolocation');
+      return true;
+    } else {
+      console.log('You cannot use Geolocation');
+      return false;
+    }
+  } catch (err) {
+    return false;
+  }
+};
  const Maps= () => {
   
- 
+  const [location, setLocation] = useState(false);
+  const getLocation = () => {
+    const result = requestLocationPermission();
+    result.then(res => {
+      console.log('res is:', res);
+      if (res) {
+        Geolocation.getCurrentPosition(
+          position => {
+            console.log(position);
+            setLocation(position);
+          },
+          error => {
+            // See error code charts below.
+            console.log(error.code, error.message);
+            setLocation(false);
+          },
+          {enableHighAccuracy: true, timeout: 45000, maximumAge: 10000},
+        );
+      }
+    });
+    console.log(location.coords.longitude);
+  };
+  
+  
+
    return (
      //<NavigationContainer>
     //  <View style={styles.mapSt}>
-      
+    
+      <View style={styles.mapSt}>
+        
       <MapView
      provider={PROVIDER_GOOGLE}
       style={styles.mapSt2}
     initialRegion={{
       
-      latitude: 33.69456414704009,
-      longitude: 73.0332678883396,
+      latitude: 33.6945648,
+      longitude: 73.0332148,
       latitudeDelta: 0.1,
       longitudeDelta: 0.1,
     }}
@@ -53,9 +105,14 @@
   <Marker coordinate={{latitude:33.665959106624314, longitude:73.00428978353044}}/>
   <Marker coordinate={{latitude:33.69609776538388, longitude:73.06139230190219}}/>
      </MapView>
- 
+
+     <TouchableOpacity onPress={getLocation} style={{textAlign:'center'}}>
+        <Image   source={require('C:/Users/Arsal/ProThenics_Nofal/gps.png')}/>
+
+         
   
-      // </View>
+       </TouchableOpacity>
+       </View>
    );
  };
  
@@ -71,14 +128,16 @@
      backgroundColor:"#3d3015", height:800,
    },
     mapSt:{
-      height: 400,
+      height: '100%',
       width: 400,
       justifyContent: 'flex-end',
-      alignItems: 'center',
+      alignItems: 'center', backgroundColor:"white"
     },
      
 mapSt2:{
-  ...StyleSheet.absoluteFillObject,
+  //...StyleSheet.absoluteFillObject,
+  flex:1, margin:5,
+      width:'100%'
 },
    equip1:{
      marginTop:20,

@@ -88,7 +88,7 @@
  flex:0.2, height:65, 
    },
    mainView:{
-     backgroundColor:"#3d3015", height:800,
+     backgroundColor:"white", height:800,
    },
     
    equipGreen:{

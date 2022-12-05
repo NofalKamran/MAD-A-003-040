@@ -35,6 +35,7 @@ import Home from './src/Home'
  import Gain from './src/Gain'
  import Loss from './src/Loss'
 
+ 
 const Stack=createNativeStackNavigator();
 function App()  {
  
